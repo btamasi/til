@@ -1,0 +1,38 @@
+* Prompt for Custom Title and Path in org-capture That Depend on Each Other
+
+We start by defining two helper functions. Prompt for a heading title, that also will be used in the filename. Save the
+title in ~org-capture-plist~ to use it with the path function.
+
+#+BEGIN_SRC elisp
+(defun my/org-capture-title ()
+  (let ((name (read-string "Name: ")))
+    (org-capture-put :title name)
+    (format "* %s \n" name))
+  )
+#+END_SRC
+
+Prompt for a subfolder name, change spaces to hyphens, transform the resulting pathname to lowercase.
+
+#+BEGIN_SRC elisp
+(defun my/org-capture-path (path)
+  (let ((folder (read-string "Folder: ")))
+    (expand-file-name
+     (format "%s/%s.org" folder
+	     (downcase (replace-regexp-in-string
+			" " "-"
+			(plist-get org-capture-plist :title))))
+     path))
+  )
+#+END_SRC
+
+Define the template in the ~init.el~ file: 
+
+#+BEGIN_SRC elisp
+(setq org-capture-templates
+      '(
+	("t" "TIL" entry
+	 (file (my/org-capture-path "~/Google Drive/org/til"))
+	 (function my/org-capture-title))
+	)
+      )
+#+END_SRC
