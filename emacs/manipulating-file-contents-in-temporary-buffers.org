@@ -1,0 +1,14 @@
+* Manipulating File Contents in Temporary Buffers
+
+It is easier to read the contents of a file and manipulate them in a /temporary buffer/ than using string data type. For
+this use functions ~with-temp-buffer~ and ~insert-file-contents~.
+
+For example reading the file contents and return a list of lines is simply
+
+#+BEGIN_SRC elisp
+(defun read-lines (path)
+  "Read the file and return the list of lines"
+  (with-temp-buffer
+    (insert-file-contents path)
+    (split-string (buffer-string) "/n" t)))
+#+END_SRC
