@@ -1,7 +1,0 @@
-* LaTeX in org-mode Appears on GitHub
-
-Simple equations:
-
-\begin{equation}
-I = \int_{a_1}^{b_1}\int_{a_2}^{b_2}...\int_{a_n}^{b_n}f(x_1, x_2, ..., x_n)dx_1dx_2...dx_n
-\end{equation}
