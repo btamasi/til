@@ -12,3 +12,5 @@ For example reading the file contents and return a list of lines is simply
     (insert-file-contents path)
     (split-string (buffer-string) "/n" t)))
 #+END_SRC
+
+Links: [[http://ergoemacs.org/emacs/elisp_read_file_content.html][ergoemacs.org]], [[https://www.emacswiki.org/emacs/ElispCookbook#toc2][Elisp Cookbook]]
