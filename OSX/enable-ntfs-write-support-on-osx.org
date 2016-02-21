@@ -1,0 +1,19 @@
+* Enable NTFS Write Support on OSX
+
+Get the UUID of the drive:
+
+#+BEGIN_SRC sh
+diskutil info /Volumes/DRIVENAME | grep UUID
+#+END_SRC
+
+Append to ~/etc/fstab~ to get read and write support:
+
+#+BEGIN_SRC sh
+sudo echo "UUID=ENTER_UUID_HERE none ntfs rw,auto,nobrowse" >> /etc/fstab
+#+END_SRC
+
+The drive will not appear under devices. To access it, open ~Volumes~:
+
+#+BEGIN_SRC sh
+open /Volumes
+#+END_SRC
