@@ -4,8 +4,13 @@ Some stuff that I find useful.
 
 * Contents
 
+** OSX
+
+- [[./OSX/enable-ntfs-write-support-on-osx.org][Enable NTFS Write Support on OSX]]
+
 ** emacs
 
 - [[./emacs/manipulating-file-contents-in-temporary-buffers.org][Manipulating File Contents in Temporary Buffers]]
 - [[./emacs/prompt-for-custom-title-and-path-in-org-capture-that-depend-on-each-other.org][Prompt for Custom Title and Path in org-capture That Depend on Each Other]]
+
 
