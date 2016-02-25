@@ -17,3 +17,5 @@ The drive will not appear under devices. To access it, open ~Volumes~:
 #+BEGIN_SRC sh
 open /Volumes
 #+END_SRC
+
+[[http://osxdaily.com/2013/10/02/enable-ntfs-write-support-mac-os-x/][Link]]
