@@ -8,9 +8,12 @@ Some stuff that I find useful.
 
 - [[./OSX/enable-ntfs-write-support-on-osx.org][Enable NTFS Write Support on OSX]]
 
+** Python
+
+- [[./Python/start-a-simple-local-server-with-python.org][Start a Simple Local Server with Python]]
+
 ** emacs
 
 - [[./emacs/manipulating-file-contents-in-temporary-buffers.org][Manipulating File Contents in Temporary Buffers]]
 - [[./emacs/prompt-for-custom-title-and-path-in-org-capture-that-depend-on-each-other.org][Prompt for Custom Title and Path in org-capture That Depend on Each Other]]
-
 

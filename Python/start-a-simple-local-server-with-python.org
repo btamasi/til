@@ -1,0 +1,13 @@
+* Start a Simple Local Server with Python
+
+Navigate to the folder in which we want to run the server.
+
+Start a webserver with ~SimpleHTTPServer~.
+
+#+BEGIN_SRC sh
+python -m SimpleHTTPSever
+#+END_SRC
+
+The server will run at ~localhost~ on port 8000. To access it type ~http://localhost:8000/~ into the addressbar.
+
+[[https://github.com/lmccart/itp-creative-js/wiki/SimpleHTTPServer][Link]]
