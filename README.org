@@ -4,6 +4,10 @@ Some stuff that I find useful.
 
 * Contents
 
+** Misc
+
+- [[./Misc/using-index-function-to-reshape-and-aggregate-data-in-excel.org][Using INDEX Function to Reshape and Aggregate Data in Excel]]
+
 ** OSX
 
 - [[./OSX/enable-ntfs-write-support-on-osx.org][Enable NTFS Write Support on OSX]]
