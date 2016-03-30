@@ -10,7 +10,7 @@ Then we can create ~Tikz~ figures with ~LaTeX~ source code blocks by using ~tikz
 will convert ~pdf~ to ~png~ with ~:imagemagic yes~ setting. To insert the resulting image instead of ~LaTeX~ block we
 use ~:results raw~.
 
-#+BEGIN_SRC
+#+BEGIN_EXAMPLE
 #+header: :imagemagick yes :fit yes :headers '("\\usepackage{tikz}" "\\usetikzlibrary{backgrounds}")
 #+header: :results raw :file filename.png
 #+BEGIN_SRC latex
@@ -21,7 +21,7 @@ use ~:results raw~.
   \draw [->, thick] (3,3) -- (0,0);
 \end{tikzpicture}
 #+END_SRC
-#+END_SRC
+#+END_EXAMPLE
 
 Since the default background is invisible, it may be a good idea to make it explicitly white, hence the invocation of
 ~\usetikzlibrary{backgrounds}~ in the preamble and the setting of the background to white fill in the code.
