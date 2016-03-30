@@ -1,0 +1,26 @@
+* Include Figures Drawn with Tikz in Org Files
+
+First we have to install [[http://www.imagemagick.org/script/index.php][~ImageMagick~]] with ~Homebrew~:
+
+#+BEGIN_SRC sh
+brew update && brew doctor && brew install imagemagick
+#+END_SRC
+
+Then we can create ~Tikz~ figures with ~LaTeX~ source code blocks by using ~tikz~ package in the preamble. ~Imagemagick~
+will convert ~pdf~ to ~png~ with ~:imagemagic yes~ setting. To insert the resulting image instead of ~LaTeX~ block we
+use ~:results raw~.
+
+#+BEGIN_EXAMPLE
+#+header: :imagemagick yes :fit yes :headers '("\\usepackage{tikz}" "\\usetikzlibrary{backgrounds}")
+#+BEGIN_SRC latex :results raw :file filename.png
+\begin{tikzpicture}[background rectangle/.style={fill=white},
+                    show background rectangle]           
+  \draw (0,0) -- (1,2);
+  \draw (1,2) -- (3,3);
+  \draw [->, thick] (3,3) -- (0,0);
+\end{tikzpicture}
+#+END_SRC
+#+END_EXAMPLE
+
+Since the default background is invisible, it may be a good idea to make it explicitly white, hence the invocation of
+~\usetikzlibrary{backgrounds}~ in the preamble and the setting of the background to white fill in the code.
