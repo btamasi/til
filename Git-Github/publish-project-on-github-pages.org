@@ -11,7 +11,7 @@ create and checkout a new branch called ~gh-pages~ and push it to the repo.
 git checkout -b gh-pages
 #+END_SRC
 
-2) Push the new branch to github
+3) Push the new branch to github:
 
 #+BEGIN_SRC sh
 git push origin gh-pages
