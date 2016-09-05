@@ -1,0 +1,98 @@
+* Create an R Package
+
+** Packages
+
+devtools and roxygen2
+
+#+BEGIN_SRC R
+install.packages("devtools")
+#+END_SRC
+
+** Structure
+
+In the ~path/to/package~ folder:
+
+- ~R/~ subfolder for R code
+- ~DESCRIPTION~ file
+- ~NAMESPACE~ file created by ~roxygen2~
+- ~man/~ subfolder for documentation created by ~roxygen2~
+- ~.Rbuildignore~ file if needed to ignore files when building the package, e.g. ~README.md~
+- ~.gitignore~ file if needed
+
+** DESCRIPTION
+
+Example:
+
+#+BEGIN_EXAMPLE
+Package: packagename
+Version: 0.1
+Date: 2016-09-02
+Title: What the Package Does (one line, title case)
+Description: What the package does (one paragraph).
+Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
+Depends: R (>= 3.2.2)
+License: What license is it under?
+LazyData: true
+#+END_EXAMPLE
+
+If using MIT license, the ~License:~ field should be ~MIT + file LICENSE~ and the package should also have a ~LICENSE~
+file with the two rows:
+
+#+BEGIN_EXAMPLE
+YEAR: 2016
+COPYRIGHT HOLDER: Balint Tamasi
+#+END_EXAMPLE
+
+** Documentation with ~roxygen2~
+
+Example:
+
+#+BEGIN_SRC R
+#' Add together two numbers.
+#'
+#' @param x A number.
+#' @param y A number.
+#' @return The sum of \code{x} and \code{y}.
+#' @examples
+#' add(1, 1)
+#' @export
+add <- function(x, y) {
+ x + y
+}
+#+END_SRC
+
+To create manuals and ~NAMESPACE~ file:
+
+~devtools::document()~
+
+** ~.Rbuildignore~
+
+Typical things to include:
+
+#+BEGIN_EXAMPLE
+^.*\.Rproj$
+^\.Rproj\.user$
+.git
+.DS_Store
+.gitignore
+^.*~$
+README.md
+#+END_EXAMPLE
+
+Do not include ~LICENSE~ file.
+
+** Writing code
+
+- ~devtools::load_all()~ after making changes
+- Create manual: ~devtools::document()~
+- to install the package:
+  - ~setwd("..")~
+  - ~install("packagename")~
+- Checking the package: ~devtools::check()~
+
+** See also
+
+- https://www.rstudio.com/wp-content/uploads/2015/03/devtools-cheatsheet.pdf
+- http://r-pkgs.had.co.nz/package.html
+- https://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/
+- http://kbroman.org/pkg_primer/
